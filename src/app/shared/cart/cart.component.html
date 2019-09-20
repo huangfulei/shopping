@@ -1,0 +1,5 @@
+<ons-button (click)="openCart()">
+  <i class="fas fa-cart-plus"></i>
+  {{totalItemNumber}}
+  <span *ngIf="totalPrice!== undefined">|{{totalPrice}} Euro</span>
+</ons-button>

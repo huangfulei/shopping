@@ -1,18 +1,39 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {CUSTOM_ELEMENTS_SCHEMA, NgModule} from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
+import {OnsenModule} from 'ngx-onsenui';
+import {FirstComponentComponent} from './features/first-component/first-component.component';
+import {SecondComponentComponent} from './features/second-component/second-component.component';
+import {ThirdComponentComponent} from './features/third-component/third-component.component';
+import {FirstModule} from './features/first-component/first.module';
+import {SecondModule} from './features/second-component/second.module';
+import {ThirdModule} from './features/third-component/third.module';
+import {AgmCoreModule} from '@agm/core';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    OnsenModule,
+    FirstModule,
+    SecondModule,
+    ThirdModule,
+  ],
+  entryComponents: [
+    FirstComponentComponent,
+    SecondComponentComponent,
+    ThirdComponentComponent
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [
+    CUSTOM_ELEMENTS_SCHEMA,
+  ],
 })
-export class AppModule { }
+export class AppModule {
+}

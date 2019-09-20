@@ -1,0 +1,35 @@
+<ons-toolbar>
+  <div class="left">
+    <ons-back-button>Back</ons-back-button>
+  </div>
+  <div class="center">
+
+  </div>
+  <div class="right">
+    <app-cart></app-cart>
+  </div>
+</ons-toolbar>
+<div class="background"></div>
+<div class="content">
+  <div class="title">
+    dinner set
+  </div>
+  <ons-card>
+    <!--<img src="https://monaca.io/img/logos/download_image_onsenui_01.png" alt="Onsen UI" style="width: 100%">-->
+
+    <div class="content">
+      <div style="float: right">
+        <ons-button (click)="addToCart()">
+          <!--<ons-icon icon="ion-thumbsup"></ons-icon>-->
+          <i class="fas fa-plus"></i>
+        </ons-button>
+      </div>
+      <ons-list>
+        <ons-list-header>Dinner for Two</ons-list-header>
+        <ons-list-item>Vue</ons-list-item>
+        <ons-list-item>Angular</ons-list-item>
+        <ons-list-item>React</ons-list-item>
+      </ons-list>
+    </div>
+  </ons-card>
+</div>

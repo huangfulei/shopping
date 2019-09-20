@@ -1,0 +1,9 @@
+<div class="content page__content">
+  <ons-list>
+    <ons-list-item *onsLazyRepeat="let item of items; let i = index">
+      <div class="center" (click)="push()">
+        #{{i}} msg: {{item.msg}}
+      </div>
+    </ons-list-item>
+  </ons-list>
+</div>

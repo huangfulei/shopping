@@ -1,0 +1,37 @@
+<ons-toolbar>
+  <div class="left">
+
+  </div>
+  <div class="center">
+    <ons-button (click)="listView=true; mapView=false">List</ons-button>
+    <ons-button (click)="listView=false; mapView=true">Map</ons-button>
+  </div>
+  <div class="right">
+<!--    <ons-toolbar-button>
+      <ons-icon icon="ion-navicon, material:md-menu"></ons-icon>
+    </ons-toolbar-button>-->
+    <div class="right">
+      <app-cart></app-cart>
+    </div>
+  </div>
+</ons-toolbar>
+<div class="background"></div>
+<div class="content">
+
+  <!--displaying a list of restaurants-->
+  <ons-list *ngIf="listView">
+    <ons-card *onsLazyRepeat="let item of items; let i = index">
+
+      <app-restaurant-card (click)="push()"></app-restaurant-card>
+      <!--<div class="center">
+        #{{i}} msg: {{item.msg}}
+      </div>-->
+    </ons-card>
+  </ons-list>
+  <div *ngIf="mapView">
+    <agm-map [latitude]="lat" [longitude]="lng">
+      <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+    </agm-map>
+  </div>
+
+</div>

@@ -1,0 +1,27 @@
+<ons-toolbar>
+  <div class="left">
+    <ons-back-button>Back</ons-back-button>
+  </div>
+  <div class="center">
+    <ons-segment #segment id="segment" style="margin-top: 8px;">
+      <button>Menu</button>
+      <button>Reviews</button>
+      <button>Info</button>
+    </ons-segment>
+  </div>
+  <div class="right">
+    <app-cart></app-cart>
+  </div>
+</ons-toolbar>
+<p>Selected Segment: {{segment.getActiveButtonIndex() + 1}}</p>
+<div *ngIf="segment.getActiveButtonIndex()===0">
+  <app-menu></app-menu>
+</div>
+<div *ngIf="segment.getActiveButtonIndex()===1">
+  <app-reviews></app-reviews>
+</div>
+<div *ngIf="segment.getActiveButtonIndex()===2">
+  <app-info></app-info>
+</div>
+
+
