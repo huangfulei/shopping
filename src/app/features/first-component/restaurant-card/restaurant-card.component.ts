@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {RestaurantCardServiceService} from './restaurant-card-service.service';
 
 @Component({
   selector: 'app-restaurant-card',
@@ -7,10 +8,16 @@ import {Component, OnInit} from '@angular/core';
 })
 export class RestaurantCardComponent implements OnInit {
 
-  constructor() {
+  public name: string;
+
+  constructor(private restaurantCardService: RestaurantCardServiceService) {
   }
 
   ngOnInit() {
+    this.restaurantCardService.getAllRestaurants().subscribe((data: any) => {
+      console.log(data);
+      this.name = data.results[0].name;
+    });
   }
 
   showDetail() {

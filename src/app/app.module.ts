@@ -10,7 +10,7 @@ import {ThirdComponentComponent} from './features/third-component/third-componen
 import {FirstModule} from './features/first-component/first.module';
 import {SecondModule} from './features/second-component/second.module';
 import {ThirdModule} from './features/third-component/third.module';
-import {AgmCoreModule} from '@agm/core';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -23,6 +23,7 @@ import {AgmCoreModule} from '@agm/core';
     FirstModule,
     SecondModule,
     ThirdModule,
+    HttpClientModule
   ],
   entryComponents: [
     FirstComponentComponent,
